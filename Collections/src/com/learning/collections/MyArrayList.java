@@ -1,6 +1,7 @@
 package com.learning.collections;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author hemant_revankar
@@ -49,7 +50,7 @@ public class MyArrayList<E extends Object> {
 	@SuppressWarnings("unchecked")
 	public E get(int index)
 	{
-		if(index < 0 || index > size)
+		if(index < 0 || index >= size)
 		{
 			throw new IndexOutOfBoundsException();
 		}
@@ -58,7 +59,7 @@ public class MyArrayList<E extends Object> {
 	
 	public void delete(int index)
 	{
-		if(index < 0 || index > size)
+		if(index < 0 || index >= size)
 		{
 			throw new IndexOutOfBoundsException();
 		}
@@ -93,14 +94,17 @@ public class MyArrayList<E extends Object> {
 	public String toString()
 	{
 		StringBuilder string = new StringBuilder();
-		for(int i=0; i<size ; i++)
-		{
-			string.append(list[i]).append(",");
+		string.append("[");
+		if (size != 0) {
+			for (int i = 0; i < size; i++) {
+				string.append(list[i]).append(",");
+			}
+			if (string.substring(string.length() - 1, string.length()).equals(
+					",")) {
+				string.deleteCharAt(string.length() - 1);
+			}
 		}
-		if(string.substring(string.length()-1, string.length()).equals(","))
-		{
-			 string.deleteCharAt(string.length()-1);
-		}
+		string.append("]");
 		return string.toString();
 	}
 	
