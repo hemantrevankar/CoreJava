@@ -1,7 +1,6 @@
 package com.hemant.datastructure.graph;
 
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class Graph {
 	private LinkedList<Integer> adjacencyList[];
@@ -60,8 +59,5 @@ public class Graph {
 		return edges;
 	}
 
-	public void breadthFirstSearch() {
-		//Queue<Integer> queue = new 
-	}
 }
 
